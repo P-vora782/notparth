@@ -2,7 +2,7 @@ import Oneko from "@/components/Oneko";
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-[620px] px-6 py-16 md:py-24">
+    <>
       <Oneko />
       {/* hero */}
       <section className="mb-12">
@@ -165,7 +165,7 @@ export default function Home() {
           </a>
         </div>
       </footer>
-    </div>
+    </>
   );
 }
 
