@@ -1,65 +1,209 @@
-import Image from "next/image";
+import Oneko from "@/components/Oneko";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="mx-auto max-w-[620px] px-6 py-16 md:py-24">
+      <Oneko />
+      {/* hero */}
+      <section className="mb-12">
+        <h1 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+          parth
+        </h1>
+        <p className="text-muted text-lg leading-relaxed">
+          thinking about crypto, markets, and the internet.
+        </p>
+        <p className="text-muted text-lg leading-relaxed">
+          based in ahmedabad, building for the world.
+        </p>
+      </section>
+
+      {/* about */}
+      <section className="mb-12 pt-6 border-t border-border">
+        <h2 className="text-sm font-medium text-muted uppercase tracking-widest mb-6">
+          about
+        </h2>
+        <div className="space-y-2 text-[1.0625rem] leading-[1.75]">
+          <p>i started trading the indian stock market at 17.</p>
+          <p>built a trading community with 150k+ members.</p>
+          <p>in 2021 i left traditional markets to go full time into crypto.</p>
+          <p>
+            since then i have worked across growth, partnerships, and
+            experiments in the ecosystem.
+          </p>
+          <p>
+            i am interested in how markets, incentives, and internet communities
+            reshape power.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+      </section>
+
+      {/* now */}
+      <section className="mb-12 pt-6 border-t border-border">
+        <h2 className="text-sm font-medium text-muted uppercase tracking-widest mb-6">
+          now
+        </h2>
+        <div className="space-y-6">
+          <WorkItem
+            company="yolo"
+            role="co-founder"
+            description='building a hypercasual trading app.'
+            link="https://tradeyolo.fun"
+            linkLabel="tradeyolo.fun"
+          />
+          <WorkItem
+            company="wedefin"
+            role="growth"
+            description="leading growth and partnerships at wedefin, an onchain index fund platform."
+          />
+        </div>
+      </section>
+
+      {/* things i've worked on */}
+      <section className="mb-12 pt-6 border-t border-border">
+        <h2 className="text-sm font-medium text-muted uppercase tracking-widest mb-8">
+          things i&apos;ve worked on
+        </h2>
+        <div className="space-y-6">
+          <WorkItem
+            company="asgardfi"
+            role="marketing"
+            description="helped drive 100k+ impressions in two months and grew social presence through experimental campaigns."
+          />
+          <WorkItem
+            company="interswap"
+            role="ecosystem growth"
+            description="worked on partnerships and user acquisition for a crosschain defi ecosystem."
+          />
+          <WorkItem
+            company="lumos labs"
+            role="social media"
+            description="designed a campaign that achieved about 10x lower cac and improved newsletter engagement."
+          />
+          <WorkItem
+            company="handshake"
+            role="partnerships, built at blockverse"
+            description="helped onboard 100+ brands to the partnership platform and created collaborations across projects."
+          />
+          <WorkItem
+            company="blockverse"
+            role="sales and growth"
+            description="worked on outreach and b2b collaborations for web3 clients."
+          />
+        </div>
+      </section>
+
+      {/* selected highlights */}
+      <section className="mb-12 pt-6 border-t border-border">
+        <h2 className="text-sm font-medium text-muted uppercase tracking-widest mb-6">
+          selected highlights
+        </h2>
+        <ul className="space-y-2 text-[1.0625rem] leading-[1.75]">
+          <li>closed 100+ brand partnerships through handshake</li>
+          <li>
+            designed a lumos labs campaign that became a benchmark for low cost
+            cac
+          </li>
+          <li>
+            grew my personal profile from 0 to 2800 followers in two years
+          </li>
+          <li>raised $25k+ for a memecoin trading fund</li>
+        </ul>
+      </section>
+
+      {/* how i can help */}
+      <section className="mb-12 pt-6 border-t border-border">
+        <h2 className="text-sm font-medium text-muted uppercase tracking-widest mb-6">
+          how i can help
+        </h2>
+        <div className="space-y-2 text-[1.0625rem] leading-[1.75]">
+          <p>
+            growth through experiments. mixing creative ideas with data loops.
+          </p>
+          <p>partnerships. connecting projects, creators, and ecosystems.</p>
+          <p>
+            web3 native distribution. understanding how narratives spread on
+            crypto twitter.
+          </p>
+          <p>
+            i work best with small teams that move fast and test ideas quickly.
+          </p>
+        </div>
+      </section>
+
+      {/* footer */}
+      <footer className="pt-8 border-t border-border">
+        <div className="flex items-center gap-6 text-sm text-muted">
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://x.com/parthvora"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:text-foreground transition-colors"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            x
           </a>
           <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="mailto:pvora782@gmail.com"
+            className="hover:text-foreground transition-colors"
+          >
+            email
+          </a>
+          <a
+            href="https://t.me/parthvora"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:text-foreground transition-colors"
           >
-            Documentation
+            telegram
+          </a>
+          <a
+            href="https://t.me/0xroomwithparthvora"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground transition-colors"
+          >
+            experiments
           </a>
         </div>
-      </main>
+      </footer>
+    </div>
+  );
+}
+
+function WorkItem({
+  company,
+  role,
+  description,
+  link,
+  linkLabel,
+}: {
+  company: string;
+  role: string;
+  description: string;
+  link?: string;
+  linkLabel?: string;
+}) {
+  return (
+    <div>
+      <p className="text-[1.0625rem]">
+        <span className="font-medium">{company}</span>
+        <span className="text-muted ml-2 text-sm">{role}</span>
+      </p>
+      <p className="text-muted text-[0.9375rem] leading-relaxed mt-1">
+        {description}
+        {link && (
+          <>
+            {" "}
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-foreground transition-colors"
+            >
+              {linkLabel || link}
+            </a>
+          </>
+        )}
+      </p>
     </div>
   );
 }
