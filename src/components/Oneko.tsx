@@ -20,13 +20,27 @@ export default function Oneko() {
     nekoEl.style.top = "16px";
     nekoEl.style.zIndex = "2147483647";
     nekoEl.style.backgroundImage = `url("/oneko.gif")`;
+    nekoEl.style.filter =
+      "brightness(0.9) sepia(1) saturate(4) hue-rotate(350deg)";
 
     document.body.appendChild(nekoEl);
 
+    // Start next to the "parth" heading text
+    const h1 = document.querySelector("h1");
     let nekoPosX = 32;
     let nekoPosY = 32;
-    let mousePosX = 0;
-    let mousePosY = 0;
+    if (h1) {
+      const range = document.createRange();
+      range.selectNodeContents(h1);
+      const textRect = range.getBoundingClientRect();
+      nekoPosX = textRect.right + 24;
+      nekoPosY = textRect.top + textRect.height / 2;
+    }
+    nekoEl.style.left = `${nekoPosX - 16}px`;
+    nekoEl.style.top = `${nekoPosY - 16}px`;
+
+    let mousePosX = nekoPosX;
+    let mousePosY = nekoPosY;
     let frameCount = 0;
     let idleTime = 0;
     let idleAnimation: string | null = null;
