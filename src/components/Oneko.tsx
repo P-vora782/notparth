@@ -21,7 +21,14 @@ export default function Oneko() {
     nekoEl.style.zIndex = "2147483647";
     nekoEl.style.backgroundImage = `url("/oneko.gif")`;
     nekoEl.style.filter =
-      "brightness(0.9) sepia(1) saturate(4) hue-rotate(350deg)";
+      "brightness(0.9) sepia(1) saturate(3) hue-rotate(335deg)";
+    nekoEl.style.transform = "scaleX(0.85)";
+
+    // Tennis ball cursor
+    const tennisBall = `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#c8e620" stroke="#a0b830" stroke-width="1.5"/><path d="M5 2.5C8 7 8 17 5 21.5" fill="none" stroke="#a0b830" stroke-width="1.5" stroke-linecap="round"/><path d="M19 2.5C16 7 16 17 19 21.5" fill="none" stroke="#a0b830" stroke-width="1.5" stroke-linecap="round"/></svg>`)}`;
+    const style = document.createElement("style");
+    style.textContent = `* { cursor: url("${tennisBall}") 12 12, auto !important; }`;
+    document.head.appendChild(style);
 
     document.body.appendChild(nekoEl);
 
@@ -216,6 +223,7 @@ export default function Oneko() {
       document.removeEventListener("mousemove", onMouseMove);
       clearInterval(intervalId);
       nekoEl.remove();
+      style.remove();
     };
   }, []);
 
