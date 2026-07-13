@@ -37,12 +37,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* now */}
+      {/* things i've worked on */}
       <section className="mb-12 pt-6 border-t border-border">
-        <h2 className="text-sm font-medium text-muted uppercase tracking-widest mb-6">
-          now
+        <h2 className="text-sm font-medium text-muted uppercase tracking-widest mb-8">
+          things i&apos;ve worked on
         </h2>
         <div className="space-y-6">
+          <WorkItem
+            company="wedefin"
+            role="growth"
+            description="leading growth and partnerships at wedefin, an onchain index fund platform."
+          />
           <WorkItem
             company="yolo"
             role="co-founder"
@@ -50,20 +55,6 @@ export default function Home() {
             link="https://tradeyolo.fun"
             linkLabel="tradeyolo.fun"
           />
-          <WorkItem
-            company="wedefin"
-            role="growth"
-            description="leading growth and partnerships at wedefin, an onchain index fund platform."
-          />
-        </div>
-      </section>
-
-      {/* things i've worked on */}
-      <section className="mb-12 pt-6 border-t border-border">
-        <h2 className="text-sm font-medium text-muted uppercase tracking-widest mb-8">
-          things i&apos;ve worked on
-        </h2>
-        <div className="space-y-6">
           <WorkItem
             company="asgardfi"
             role="marketing"
@@ -134,7 +125,7 @@ export default function Home() {
       <footer className="pt-8 border-t border-border">
         <div className="flex items-center gap-6 text-sm text-muted">
           <a
-            href="https://x.com/parthvora"
+            href="https://x.com/0xparthvora"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-foreground transition-colors"
@@ -156,7 +147,7 @@ export default function Home() {
             telegram
           </a>
           <a
-            href="https://t.me/0xroomwithparthvora"
+            href="https://t.me/Room0xparthvora"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-foreground transition-colors"
