@@ -154,6 +154,14 @@ export default function Home() {
           >
             experiments
           </a>
+          <a
+            href="https://substack.com/@0xparthvora"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground transition-colors"
+          >
+            substack
+          </a>
         </div>
       </footer>
     </>
