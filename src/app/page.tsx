@@ -44,9 +44,14 @@ export default function Home() {
         </h2>
         <div className="space-y-6">
           <WorkItem
+            company="ai content systems"
+            role="independent project"
+            description="built an autonomous ai agent pipeline that handles topic research, scripting, editing, and posting for a creator's instagram end to end. drove 611k+ views, 14k+ shares, and 10k+ saves, growing the account to 3,100+ followers with a 2.3% share rate."
+          />
+          <WorkItem
             company="wedefin"
-            role="growth"
-            description="leading growth and partnerships at wedefin, an onchain index fund platform."
+            role="growth consultant"
+            description="grew social presence from zero to nearly 1,000 followers through organic content strategy. shaped the pitch deck and product narrative, and worked with founders on positioning and go-to-market."
           />
           <WorkItem
             company="yolo"
@@ -57,28 +62,28 @@ export default function Home() {
           />
           <WorkItem
             company="asgardfi"
-            role="marketing"
-            description="helped drive 100k+ impressions in two months and grew social presence through experimental campaigns."
+            role="growth associate"
+            description="owned meme marketing and trend-led content across x/twitter. grew telegram engagement 10x (5,108 messages) and expanded the member base by 44%, while increasing twitter reach 86% and reposts 100%."
           />
           <WorkItem
             company="interswap"
-            role="ecosystem growth"
-            description="worked on partnerships and user acquisition for a crosschain defi ecosystem."
+            role="marketing associate"
+            description="attracted 15,000 users by designing the airdrop and points program, scaled the intern account to 100k impressions in 3 months, and managed 35+ kol relationships globally."
           />
           <WorkItem
             company="lumos labs"
-            role="social media"
-            description="designed a campaign that achieved about 10x lower cac and improved newsletter engagement."
+            role="social media associate"
+            description="led a campaign that cut cac to 1/10th of previous levels and boosted newsletter open rates by 60% through targeted experiments."
           />
           <WorkItem
             company="handshake"
             role="partnerships, built at blockverse"
-            description="helped onboard 100+ brands to the partnership platform and created collaborations across projects."
+            description="led development of handshake, a partnership tool for web3 brands, onboarding 100+ companies including supra oracles."
           />
           <WorkItem
             company="blockverse"
-            role="sales and growth"
-            description="worked on outreach and b2b collaborations for web3 clients."
+            role="growth and sales intern"
+            description="secured 2 clients through sales strategy and created content generating 60k+ impressions per month on x."
           />
         </div>
       </section>
