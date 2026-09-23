@@ -7,17 +7,9 @@ export default function Home() {
       <Oneko />
       {/* hero */}
       <section className="mb-12">
-        <div className="flex items-center justify-between mb-4">
-          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">
-            parth
-          </h1>
-          <Link
-            href="/essays"
-            className="text-sm text-muted hover:text-foreground transition-colors"
-          >
-            essays
-          </Link>
-        </div>
+        <h1 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+          parth
+        </h1>
         <p className="text-muted text-lg leading-relaxed">
           thinking about crypto, markets, and the internet.
         </p>
@@ -168,14 +160,12 @@ export default function Home() {
           >
             experiments
           </a>
-          <a
-            href="https://substack.com/@0xparthvora"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/essays"
             className="hover:text-foreground transition-colors"
           >
-            substack
-          </a>
+            essays
+          </Link>
         </div>
       </footer>
     </>
