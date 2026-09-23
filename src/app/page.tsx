@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Oneko from "@/components/Oneko";
 
 export default function Home() {
@@ -6,9 +7,17 @@ export default function Home() {
       <Oneko />
       {/* hero */}
       <section className="mb-12">
-        <h1 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
-          parth
-        </h1>
+        <div className="flex items-center justify-between mb-4">
+          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">
+            parth
+          </h1>
+          <Link
+            href="/essays"
+            className="text-sm text-muted hover:text-foreground transition-colors"
+          >
+            essays
+          </Link>
+        </div>
         <p className="text-muted text-lg leading-relaxed">
           thinking about crypto, markets, and the internet.
         </p>
