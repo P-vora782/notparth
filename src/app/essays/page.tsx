@@ -25,25 +25,25 @@ export default function EssaysPage() {
         Longer thoughts on crypto, markets, the internet, and life.
       </p>
 
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col">
         {essays.map((essay) => (
           <Link
             key={essay.slug}
             href={`/essays/${essay.slug}`}
-            className="group block"
+            className="group block py-6 border-b border-border first:pt-0 last:border-0 -mx-4 px-4 rounded-lg hover:bg-foreground/[0.03] transition-colors"
           >
             <article>
-              <time className="text-sm text-muted">
+              <time className="text-xs text-muted uppercase tracking-wider">
                 {new Date(essay.date).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
                 })}
               </time>
-              <h2 className="font-serif text-xl font-semibold mt-1 group-hover:opacity-70 transition-opacity">
+              <h2 className="font-serif text-xl font-semibold mt-2 group-hover:opacity-70 transition-opacity">
                 {essay.title}
               </h2>
-              <p className="text-muted mt-1 text-[0.9375rem]">
+              <p className="text-muted mt-1.5 text-[0.9375rem] line-clamp-2">
                 {essay.description}
               </p>
             </article>

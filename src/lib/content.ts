@@ -12,12 +12,6 @@ export type Essay = {
   content: string;
 };
 
-export type Note = {
-  slug: string;
-  content: string;
-  date: string;
-};
-
 export function getEssays(): Essay[] {
   const dir = path.join(contentDir, "essays");
   if (!fs.existsSync(dir)) return [];
@@ -54,25 +48,4 @@ export function getEssay(slug: string): Essay | null {
     description: data.description || "",
     content,
   };
-}
-
-export function getNotes(): Note[] {
-  const dir = path.join(contentDir, "notes");
-  if (!fs.existsSync(dir)) return [];
-
-  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".md"));
-
-  const notes = files.map((file) => {
-    const raw = fs.readFileSync(path.join(dir, file), "utf-8");
-    const { data, content } = matter(raw);
-    return {
-      slug: file.replace(/\.md$/, ""),
-      content: content.trim(),
-      date: data.date || "",
-    };
-  });
-
-  return notes.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
 }

@@ -217,7 +217,7 @@ export default function Oneko() {
     };
 
     document.addEventListener("mousemove", onMouseMove);
-    let intervalId = setInterval(frame, 100);
+    const intervalId = setInterval(frame, 100);
 
     return () => {
       document.removeEventListener("mousemove", onMouseMove);
