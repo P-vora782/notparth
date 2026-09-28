@@ -1,5 +1,4 @@
 import { getEssay, getEssays } from "@/lib/content";
-import { markdownToHtml } from "@/lib/markdown";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -8,14 +7,16 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+export const revalidate = 86400;
+
 export async function generateStaticParams() {
-  const essays = getEssays();
+  const essays = await getEssays();
   return essays.map((essay) => ({ slug: essay.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const essay = getEssay(slug);
+  const essay = await getEssay(slug);
   if (!essay) return {};
   return {
     title: `${essay.title} — Parth`,
@@ -25,10 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function EssayPage({ params }: Props) {
   const { slug } = await params;
-  const essay = getEssay(slug);
+  const essay = await getEssay(slug);
   if (!essay) notFound();
-
-  const html = markdownToHtml(essay.content);
 
   return (
     <article>
@@ -52,7 +51,7 @@ export default async function EssayPage({ params }: Props) {
         </h1>
       </header>
 
-      <div className="prose" dangerouslySetInnerHTML={{ __html: html }} />
+      <div className="prose" dangerouslySetInnerHTML={{ __html: essay.html }} />
     </article>
   );
 }

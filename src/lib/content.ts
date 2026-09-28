@@ -1,51 +1,46 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { markdownToHtml } from "./markdown";
+import { getSubstackEssays } from "./substack";
 
-const contentDir = path.join(process.cwd(), "content");
+const essaysDir = path.join(process.cwd(), "content", "essays");
 
 export type Essay = {
   slug: string;
   title: string;
   date: string;
   description: string;
-  content: string;
+  html: string;
 };
 
-export function getEssays(): Essay[] {
-  const dir = path.join(contentDir, "essays");
-  if (!fs.existsSync(dir)) return [];
+function getLocalEssays(): Essay[] {
+  if (!fs.existsSync(essaysDir)) return [];
 
-  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".md"));
+  return fs
+    .readdirSync(essaysDir)
+    .filter((file) => file.endsWith(".md"))
+    .map((file) => {
+      const raw = fs.readFileSync(path.join(essaysDir, file), "utf-8");
+      const { data, content } = matter(raw);
+      return {
+        slug: file.replace(/\.md$/, ""),
+        title: data.title || "",
+        date: data.date || "",
+        description: data.description || "",
+        html: markdownToHtml(content),
+      };
+    });
+}
 
-  const essays = files.map((file) => {
-    const raw = fs.readFileSync(path.join(dir, file), "utf-8");
-    const { data, content } = matter(raw);
-    return {
-      slug: file.replace(/\.md$/, ""),
-      title: data.title || "",
-      date: data.date || "",
-      description: data.description || "",
-      content,
-    };
-  });
-
+export async function getEssays(): Promise<Essay[]> {
+  const essays = [...(await getSubstackEssays()), ...getLocalEssays()];
   return essays.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 }
 
-export function getEssay(slug: string): Essay | null {
-  const filePath = path.join(contentDir, "essays", `${slug}.md`);
-  if (!fs.existsSync(filePath)) return null;
-
-  const raw = fs.readFileSync(filePath, "utf-8");
-  const { data, content } = matter(raw);
-  return {
-    slug,
-    title: data.title || "",
-    date: data.date || "",
-    description: data.description || "",
-    content,
-  };
+export async function getEssay(slug: string): Promise<Essay | null> {
+  const essays = await getEssays();
+  return essays.find((essay) => essay.slug === slug) ?? null;
 }

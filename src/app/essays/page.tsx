@@ -6,8 +6,10 @@ export const metadata = {
   description: "Longer thoughts on crypto, markets, the internet, and life.",
 };
 
-export default function EssaysPage() {
-  const essays = getEssays();
+export const revalidate = 86400;
+
+export default async function EssaysPage() {
+  const essays = await getEssays();
 
   return (
     <div>
