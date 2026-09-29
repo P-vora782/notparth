@@ -166,6 +166,14 @@ export default function Home() {
           >
             essays
           </Link>
+          <a
+            href="https://calendar.app.google/5ofMyPYNw6WtXFXT9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground transition-colors"
+          >
+            call
+          </a>
         </div>
       </footer>
     </>
