@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       { source: "/threads", destination: `${LAB}/` },
-      { source: "/threads/api/:fn(login|logout|data|edit)", destination: `${LAB}/api/:fn` },
+      { source: "/threads/api/:fn(data|edit)", destination: `${LAB}/api/:fn` },
       { source: "/threads/img/:path*", destination: `${LAB}/img/:path*` },
       { source: "/threads/:path*", destination: `${DASHBOARD}/threads/:path*` },
     ];
