@@ -131,7 +131,7 @@ export default function Home() {
       <footer className="pt-8 border-t border-border">
         <div className="flex items-center gap-6 text-sm text-muted">
           <a
-            href="https://x.com/0xparthvora"
+            href="https://x.com/parthvora"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-foreground transition-colors"

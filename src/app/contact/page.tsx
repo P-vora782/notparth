@@ -6,7 +6,7 @@ export const metadata = {
 const links = [
   {
     label: "X (Twitter)",
-    href: "https://x.com/0xparthvora",
+    href: "https://x.com/parthvora",
     description: "where I think out loud",
   },
   {
