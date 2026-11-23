@@ -11,9 +11,6 @@ export default function Home() {
           parth
         </h1>
         <p className="text-muted text-lg leading-relaxed">
-          thinking about crypto, markets, and the internet.
-        </p>
-        <p className="text-muted text-lg leading-relaxed">
           based in ahmedabad, building for the world.
         </p>
       </section>
@@ -35,6 +32,30 @@ export default function Home() {
             i am interested in how markets, incentives, and internet communities
             reshape power.
           </p>
+          <p>these days i build small iphone apps.</p>
+        </div>
+      </section>
+
+      {/* things i'm building */}
+      <section className="mb-12 pt-6 border-t border-border">
+        <h2 className="text-sm font-medium text-muted uppercase tracking-widest mb-8">
+          things i&apos;m building
+        </h2>
+        <div className="space-y-6">
+          <WorkItem
+            company="backstory"
+            role="iphone app"
+            description="a daily photo journal. a photo shows what happened. your backstory is what it meant."
+            link="https://apps.apple.com/app/id6819214390"
+            linkLabel="app store"
+          />
+          <WorkItem
+            company="kept"
+            role="iphone app"
+            description="dose reminders for glp-1s and peptides. answers one question: did i take it? calculators and guides live at"
+            link="https://keptcalc.com"
+            linkLabel="keptcalc.com"
+          />
         </div>
       </section>
 
@@ -44,6 +65,18 @@ export default function Home() {
           things i&apos;ve worked on
         </h2>
         <div className="space-y-6">
+          <WorkItem
+            company="rookie fund"
+            role="memecoin trading fund"
+            description="raised $25k+ from backers to trade memecoins."
+          />
+          <WorkItem
+            company="explore ahmedabad"
+            role="fun side project"
+            description="a hand-picked guide to the city's cafes, food, places and getaways."
+            link="https://exploreahmedabad.wiki"
+            linkLabel="exploreahmedabad.wiki"
+          />
           <WorkItem
             company="ai content systems"
             role="independent project"
@@ -57,7 +90,7 @@ export default function Home() {
           <WorkItem
             company="yolo"
             role="co-founder"
-            description='building a hypercasual trading app.'
+            description="built a hypercasual trading app."
             link="https://tradeyolo.fun"
             linkLabel="tradeyolo.fun"
           />
@@ -86,44 +119,6 @@ export default function Home() {
             role="growth and sales intern"
             description="secured 2 clients through sales strategy and created content generating 60k+ impressions per month on x."
           />
-        </div>
-      </section>
-
-      {/* selected highlights */}
-      <section className="mb-12 pt-6 border-t border-border">
-        <h2 className="text-sm font-medium text-muted uppercase tracking-widest mb-6">
-          selected highlights
-        </h2>
-        <ul className="space-y-2 text-[1.0625rem] leading-[1.75]">
-          <li>closed 100+ brand partnerships through handshake</li>
-          <li>
-            designed a lumos labs campaign that became a benchmark for low cost
-            cac
-          </li>
-          <li>
-            grew my personal profile from 0 to 2800 followers in two years
-          </li>
-          <li>raised $25k+ for a memecoin trading fund</li>
-        </ul>
-      </section>
-
-      {/* how i can help */}
-      <section className="mb-12 pt-6 border-t border-border">
-        <h2 className="text-sm font-medium text-muted uppercase tracking-widest mb-6">
-          how i can help
-        </h2>
-        <div className="space-y-2 text-[1.0625rem] leading-[1.75]">
-          <p>
-            growth through experiments. mixing creative ideas with data loops.
-          </p>
-          <p>partnerships. connecting projects, creators, and ecosystems.</p>
-          <p>
-            web3 native distribution. understanding how narratives spread on
-            crypto twitter.
-          </p>
-          <p>
-            i work best with small teams that move fast and test ideas quickly.
-          </p>
         </div>
       </section>
 

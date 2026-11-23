@@ -9,7 +9,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "parth",
-  description: "thinking about crypto, markets, and the internet.",
+  description: "based in ahmedabad, building for the world.",
 };
 
 export const viewport: Viewport = {

@@ -35,18 +35,18 @@ export default async function EssayPage({ params }: Props) {
         href="/essays"
         className="text-sm text-muted hover:text-foreground transition-colors mb-8 inline-block"
       >
-        &larr; Essays
+        &larr; essays
       </Link>
 
       <header className="mb-10">
-        <time className="text-sm text-muted">
+        <time className="text-sm text-muted lowercase">
           {new Date(essay.date).toLocaleDateString("en-US", {
             year: "numeric",
             month: "long",
             day: "numeric",
           })}
         </time>
-        <h1 className="font-serif text-3xl md:text-4xl font-bold tracking-tight mt-2">
+        <h1 className="text-3xl md:text-4xl font-semibold tracking-tight mt-2">
           {essay.title}
         </h1>
       </header>

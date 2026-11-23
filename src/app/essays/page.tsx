@@ -17,14 +17,14 @@ export default async function EssaysPage() {
         href="/"
         className="text-sm text-muted hover:text-foreground transition-colors mb-8 inline-block"
       >
-        &larr; Home
+        &larr; parth
       </Link>
 
-      <h1 className="font-serif text-3xl font-bold tracking-tight mb-2">
-        Essays
+      <h1 className="text-3xl font-semibold tracking-tight mb-2">
+        essays
       </h1>
       <p className="text-muted mb-12">
-        Longer thoughts on crypto, markets, the internet, and life.
+        longer thoughts on crypto, markets, the internet, and life.
       </p>
 
       <div className="flex flex-col">
@@ -42,7 +42,7 @@ export default async function EssaysPage() {
                   day: "numeric",
                 })}
               </time>
-              <h2 className="font-serif text-xl font-semibold mt-2 group-hover:opacity-70 transition-opacity">
+              <h2 className="text-xl font-semibold mt-2 group-hover:opacity-70 transition-opacity">
                 {essay.title}
               </h2>
               <p className="text-muted mt-1.5 text-[0.9375rem] line-clamp-2">
@@ -54,7 +54,7 @@ export default async function EssaysPage() {
       </div>
 
       {essays.length === 0 && (
-        <p className="text-muted">No essays yet. Check back soon.</p>
+        <p className="text-muted">no essays yet. check back soon.</p>
       )}
     </div>
   );

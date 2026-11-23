@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "Contact — Parth",
   description: "Get in touch.",
@@ -5,17 +7,17 @@ export const metadata = {
 
 const links = [
   {
-    label: "X (Twitter)",
+    label: "x",
     href: "https://x.com/parthvora",
-    description: "where I think out loud",
+    description: "where i think out loud",
   },
   {
-    label: "Email",
+    label: "email",
     href: "mailto:pvora782@gmail.com",
     description: "for longer conversations",
   },
   {
-    label: "Telegram",
+    label: "telegram",
     href: "https://t.me/parthvora",
     description: "for quick messages",
   },
@@ -24,11 +26,18 @@ const links = [
 export default function ContactPage() {
   return (
     <div>
-      <h1 className="font-serif text-3xl font-bold tracking-tight mb-2">
-        Contact
+      <Link
+        href="/"
+        className="text-sm text-muted hover:text-foreground transition-colors mb-8 inline-block"
+      >
+        &larr; parth
+      </Link>
+
+      <h1 className="text-3xl font-semibold tracking-tight mb-2">
+        contact
       </h1>
       <p className="text-muted mb-12">
-        I like meeting interesting people.
+        i like meeting interesting people.
       </p>
 
       <div className="flex flex-col gap-6">
